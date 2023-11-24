@@ -1,0 +1,51 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.item-filter {
+	display: none;
+}
+
+.item:hover .item-filter {
+	display: block;
+}
+
+.option {
+	@apply bg-custom-blue text-black;
+}
+
+.option-focused {
+	@apply bg-lime-100 text-black;
+}
+
+.option-normal {
+	@apply bg-white text-black;
+}
+
+#quote-box {
+	background-color: grey;
+	width: 80%;
+	height: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50%;
+}
+#quote-section {
+	margin-left: 20vw;
+	margin-right: 20vw;
+	padding-top: 10%;
+	margin-bottom: 5%;
+}
+#quote-btn {
+	cursor: pointer;
+	background-color: yellow;
+}
+
+#btn-section {
+	margin-bottom: 10%;
+	margin-left: 1%;
+	display: flex;
+	justify-content: space-between;
+}
