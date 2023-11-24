@@ -12,16 +12,63 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faTumblr } from '@fortawesome/free-brands-svg-icons';
 
 const quotes = [
-	'When I stand before God at the end of my life, I would hope that I would not have a single bit of talent left and could say, I used everything you gave me.',
+	{
+		quote: 'The only way to do great work is to love what you do.',
+		author: 'Steve Jobs',
+	},
+	{
+		quote:
+			"In three words I can sum up everything I've learned about life: it goes on.",
+		author: 'Robert Frost',
+	},
+	{
+		quote: 'Be yourself; everyone else is already taken.',
+		author: 'Oscar Wilde',
+	},
+	{
+		quote:
+			'You have within you right now, everything you need to deal with whatever the world can throw at you.',
+		author: 'Brian Tracy',
+	},
+	{
+		quote:
+			'The future belongs to those who believe in the beauty of their dreams.',
+		author: 'Eleanor Roosevelt',
+	},
+	{
+		quote: "Life is what happens when you're busy making other plans.",
+		author: 'John Lennon',
+	},
+	{
+		quote:
+			'Success is not final, failure is not fatal: It is the courage to continue that counts.',
+		author: 'Winston Churchill',
+	},
+	{
+		quote:
+			'The only limit to our realization of tomorrow will be our doubts of today.',
+		author: 'Franklin D. Roosevelt',
+	},
+	{
+		quote: 'The best way to predict the future is to invent it.',
+		author: 'Alan Kay',
+	},
+	{
+		quote:
+			'Do not wait to strike till the iron is hot, but make it hot by striking.',
+		author: 'William Butler Yeats',
+	},
 ];
 
 const ItemList = () => {
 	const [activeQuote, setActiveQuote] = useState('');
+	const [quoteIndex, setQuoteIndex] = useState(0);
 
 	const changeQuote = () => {
-		const quoteIndex = Math.round(Math.random() * 10);
+		const quote = Math.round(Math.random() * 10);
+		setQuoteIndex(quote);
 		console.log(Math.round(Math.random() * 10));
-		setActiveQuote(quotes[quoteIndex]);
+		setActiveQuote(quotes[quote]);
 	};
 
 	useEffect(() => {
@@ -33,9 +80,9 @@ const ItemList = () => {
 				id='quote-box'
 				class='flex flex-col items-center justify-center h-screen'
 			>
-				<div id='quote-section'>{activeQuote}</div>
+				<div id='quote-section'>{quotes[quoteIndex]['quote']}</div>
 				<div id='author'>
-					<p> - Stephen Ochieng</p>
+					<p> - {quotes[quoteIndex]['author']}</p>
 				</div>
 				<br />
 				<div id='btn-section'>
