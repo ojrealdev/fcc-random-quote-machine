@@ -67,7 +67,6 @@ const ItemList = () => {
 	const changeQuote = () => {
 		const quote = Math.round(Math.random() * 10);
 		setQuoteIndex(quote);
-		console.log(Math.round(Math.random() * 10));
 		setActiveQuote(quotes[quote]);
 	};
 
@@ -80,9 +79,11 @@ const ItemList = () => {
 				id='quote-box'
 				class='flex flex-col items-center justify-center h-screen'
 			>
-				<div id='quote-section'>{quotes[quoteIndex]['quote']}</div>
+				<div id='quote-section'>
+					{quotes[quoteIndex]?.['quote'] || quotes[0]['quote']}
+				</div>
 				<div id='author'>
-					<p> - {quotes[quoteIndex]['author']}</p>
+					<p> - {quotes[quoteIndex]?.['author'] || quotes[0]['author']}</p>
 				</div>
 				<br />
 				<div id='btn-section'>
